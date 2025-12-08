@@ -3,32 +3,20 @@ import ProductCard from '../components/ProductCard';
 import { products, categories, categoryDetails } from '../data/products';
 
 export default function Shop() {
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedCategory, setSelectedCategory] = useState('skincare');
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
-  const filtered = selectedCategory === 'all' ? products : products.filter(p => p.category === selectedCategory);
+  const filtered = products.filter(p => p.category === selectedCategory);
 
   return (
     <div style={styles.wrapper} className="shop-wrapper">
       <aside style={styles.sidebar} className="shop-sidebar">
         <h2 style={styles.sidebarTitle}>Categories</h2>
         <div style={styles.categoryList}>
-          <button onClick={() => { setSelectedCategory('all'); setSelectedSubcategory(null); }} style={{...styles.sidebarBtn, ...(selectedCategory === 'all' ? styles.sidebarBtnActive : {})}}>
-            All Products
-          </button>
           {categories.filter(cat => cat !== 'all').map(cat => (
             <div key={cat} style={styles.categoryGroup}>
               <button onClick={() => { setSelectedCategory(cat); setSelectedSubcategory(null); }} style={{...styles.sidebarBtn, ...(selectedCategory === cat ? styles.sidebarBtnActive : {})}}>
                 {categoryDetails[cat]?.name}
               </button>
-              {selectedCategory === cat && categoryDetails[cat] && (
-                <div style={styles.subcategoryGroup}>
-                  {categoryDetails[cat].subcategories.map(sub => (
-                    <button key={sub} onClick={() => setSelectedSubcategory(sub)} style={{...styles.subcategoryBtn, ...(selectedSubcategory === sub ? styles.subcategoryBtnActive : {})}}>
-                      {sub}
-                    </button>
-                  ))}
-                </div>
-              )}
             </div>
           ))}
         </div>

@@ -18,6 +18,7 @@ export default function Home({ onNavigate }) {
       <section id="home" style={styles.hero}>
         <div style={styles.heroContent}>
           <button 
+            className="hero-cta-btn"
             style={{...styles.ctaBtn, ...(hoveredBtn === 'cta' ? {transform: 'scale(1.05)'} : {})}}
             onMouseEnter={() => setHoveredBtn('cta')}
             onMouseLeave={() => setHoveredBtn(null)}
@@ -30,8 +31,7 @@ export default function Home({ onNavigate }) {
 
       <div style={styles.container}>
         <section id="featured" style={styles.section}>
-          <h2 style={styles.sectionTitle}>✨ Shop by Category</h2>
-          <p style={styles.sectionSubtitle}>Discover our curated beauty collections</p>
+          <h2 style={styles.sectionTitle}>Discover Our Curated Beauty Collections</h2>
           <div style={styles.categoryGrid}>
             {categories.map((cat, idx) => (
               <div 
@@ -47,14 +47,7 @@ export default function Home({ onNavigate }) {
                 <div style={styles.categoryContent}>
                   <h3 style={styles.categoryName}>{cat.name}</h3>
                   <p style={styles.categoryDesc}>{cat.desc}</p>
-                  <button 
-                    style={{...styles.categoryBtn, ...(hoveredBtn === `btn-${idx}` ? {background: '#c026d3', transform: 'translateY(-2px)', boxShadow: '0 6px 20px rgba(217, 70, 239, 0.4)'} : {})}}
-                    onMouseEnter={() => setHoveredBtn(`btn-${idx}`)}
-                    onMouseLeave={() => setHoveredBtn(null)}
-                    onClick={() => onNavigate('shop')}
-                  >
-                    Shop {cat.name} →
-                  </button>
+
                 </div>
               </div>
             ))}

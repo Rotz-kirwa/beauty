@@ -10,10 +10,10 @@ export default function Header({ onCartClick, onNavigate }) {
     <header style={styles.header}>
       <div style={styles.container}>
         <h1 style={{...styles.logo, cursor: 'pointer'}} onClick={() => onNavigate('home')}>✨ BeautyShop</h1>
-        <button style={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
+        <button className="mobile-hamburger" style={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? '✕' : '☰'}
         </button>
-        <nav style={{...styles.nav, ...(menuOpen ? styles.navOpen : {})}}>
+        <nav className={`mobile-nav ${menuOpen ? 'open' : ''}`} style={styles.nav}>
           <button onClick={() => { onNavigate('home'); setMenuOpen(false); }} style={styles.navLink}>Home</button>
           <button onClick={() => { onNavigate('shop'); setMenuOpen(false); }} style={styles.navLink}>Shop</button>
           <button onClick={() => { onNavigate('about'); setMenuOpen(false); }} style={styles.navLink}>About</button>
@@ -33,7 +33,7 @@ const styles = {
   header: { background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(10px)', boxShadow: 'none', position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, width: '100%' },
   container: { maxWidth: '1400px', margin: '0 auto', padding: '1rem 2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', position: 'relative' },
   logo: { fontSize: '1.5rem', fontWeight: 'bold', color: '#d946ef', margin: 0 },
-  hamburger: { display: 'none', background: 'none', border: 'none', fontSize: '1.8rem', cursor: 'pointer', color: '#333', padding: '0.5rem', zIndex: 101 },
+  hamburger: { display: 'none', background: 'none', border: 'none', fontSize: '1.8rem', cursor: 'pointer', color: '#333', padding: '0.5rem', zIndex: 101, '@media (max-width: 768px)': { display: 'block' } },
   nav: { display: 'flex', gap: '2rem', alignItems: 'center', flex: 1, justifyContent: 'flex-end' },
   navOpen: {},
   navLink: { textDecoration: 'none', color: '#333', fontSize: '1rem', fontWeight: '500', transition: 'color 0.2s', background: 'none', border: 'none', cursor: 'pointer' },

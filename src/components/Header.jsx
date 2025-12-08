@@ -24,7 +24,7 @@ export default function Header({ onCartClick, onNavigate }) {
         </h1>
         
         {/* Desktop Navigation */}
-        <nav style={styles.desktopNav}>
+        <nav style={styles.desktopNav} className="desktopNav">
           <button onClick={() => handleNavClick('home')} style={styles.navLink}>Home</button>
           <button onClick={() => handleNavClick('shop')} style={styles.navLink}>Shop</button>
           <button onClick={() => handleNavClick('about')} style={styles.navLink}>About</button>

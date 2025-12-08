@@ -8,8 +8,8 @@ export default function Shop() {
   const filtered = selectedCategory === 'all' ? products : products.filter(p => p.category === selectedCategory);
 
   return (
-    <div style={styles.wrapper}>
-      <aside style={styles.sidebar}>
+    <div style={styles.wrapper} className="shop-wrapper">
+      <aside style={styles.sidebar} className="shop-sidebar">
         <h2 style={styles.sidebarTitle}>Categories</h2>
         <div style={styles.categoryList}>
           <button onClick={() => { setSelectedCategory('all'); setSelectedSubcategory(null); }} style={{...styles.sidebarBtn, ...(selectedCategory === 'all' ? styles.sidebarBtnActive : {})}}>
@@ -44,8 +44,9 @@ export default function Shop() {
 }
 
 const styles = {
-  wrapper: { display: 'flex', maxWidth: '1600px', margin: '0 auto', gap: '2rem', padding: '2rem', minHeight: '100vh' },
+  wrapper: { display: 'flex', maxWidth: '1600px', margin: '0 auto', gap: '2rem', padding: '2rem', minHeight: '100vh', flexDirection: 'row' },
   sidebar: { width: '280px', background: '#fff', padding: '1.5rem', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', height: 'fit-content', position: 'sticky', top: '100px', alignSelf: 'flex-start' },
+  '@media (max-width: 768px)': { wrapper: { flexDirection: 'column', padding: '1rem' }, sidebar: { width: '100%', position: 'static' } },
   sidebarTitle: { fontSize: '1.5rem', marginBottom: '1.5rem', color: '#333', fontWeight: '700' },
   categoryList: { display: 'flex', flexDirection: 'column', gap: '0.5rem' },
   categoryGroup: { marginBottom: '0.5rem' },

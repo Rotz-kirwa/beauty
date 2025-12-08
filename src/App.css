@@ -33,12 +33,74 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-  #root {
-    padding-top: 70px;
+  .shop-wrapper {
+    flex-direction: column !important;
+    padding: 1rem !important;
   }
   
-  button {
-    font-size: 0.9rem !important;
-    padding: 0.6rem 1.2rem !important;
+  .shop-sidebar {
+    width: 100% !important;
+    position: static !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .category-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #root {
+    padding-top: 0;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  header nav {
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important;
+    width: 70% !important;
+    height: 100vh !important;
+    background: #fff !important;
+    flex-direction: column !important;
+    padding: 5rem 2rem 2rem !important;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1) !important;
+    transition: right 0.3s ease !important;
+    gap: 1.5rem !important;
+    align-items: flex-start !important;
+  }
+  
+  header nav[style*="navOpen"] {
+    right: 0 !important;
+  }
+  
+  header button[style*="hamburger"] {
+    display: block !important;
+  }
+  
+  header nav button {
+    width: 100% !important;
+    text-align: left !important;
+    padding: 0.75rem !important;
+    font-size: 1.1rem !important;
+  }
+  
+  header nav > div {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    padding-top: 1rem !important;
+    border-top: 1px solid #eee !important;
   }
 }

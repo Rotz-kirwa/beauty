@@ -103,16 +103,17 @@ a:hover {
     position: fixed !important;
     top: 0 !important;
     right: -100% !important;
-    width: 70% !important;
+    width: 75% !important;
     height: 100vh !important;
-    background: #fff !important;
+    background: linear-gradient(135deg, #fff 0%, #f9f3ff 100%) !important;
     flex-direction: column !important;
-    padding: 5rem 2rem 2rem !important;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.1) !important;
+    padding: 1.5rem 1.5rem 2rem 1.5rem !important;
+    box-shadow: -4px 0 20px rgba(217, 70, 239, 0.15) !important;
     transition: right 0.3s ease !important;
-    gap: 1.5rem !important;
-    align-items: flex-start !important;
+    gap: 1rem !important;
+    align-items: stretch !important;
     z-index: 99 !important;
+    overflow-y: auto !important;
   }
   
   .mobile-nav.open {
@@ -122,15 +123,42 @@ a:hover {
   .mobile-nav button {
     width: 100% !important;
     text-align: left !important;
-    padding: 0.75rem !important;
+    padding: 1rem 1.2rem !important;
     font-size: 1.1rem !important;
+    background: none !important;
+    border: none !important;
+    color: #333 !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+    border-left: 3px solid transparent !important;
+  }
+  
+  .mobile-nav button:hover {
+    background: rgba(217, 70, 239, 0.1) !important;
+    border-left-color: #d946ef !important;
+    color: #d946ef !important;
   }
   
   .mobile-nav > div {
     width: 100% !important;
     justify-content: flex-start !important;
-    padding-top: 1rem !important;
-    border-top: 1px solid #eee !important;
+    padding-top: 1.5rem !important;
+    border-top: 2px solid rgba(217, 70, 239, 0.2) !important;
+    margin-top: 1rem !important;
+    display: flex !important;
+    gap: 1rem !important;
+  }
+  
+  .mobile-nav > div button {
+    flex: 1 !important;
+    padding: 0.8rem !important;
+    font-size: 1rem !important;
+    border-radius: 8px !important;
+    border-left: none !important;
+    background: rgba(217, 70, 239, 0.1) !important;
+    color: #d946ef !important;
   }
   
   .hero-cta-btn {

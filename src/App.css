@@ -113,6 +113,10 @@ a:hover {
     display: block !important;
   }
   
+  .desktopNav {
+    display: none !important;
+  }
+  
   .hero-cta-btn {
     padding: 0.6rem 1.2rem !important;
     font-size: 0.85rem !important;

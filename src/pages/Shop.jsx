@@ -11,7 +11,7 @@ export default function Shop() {
     <div style={styles.wrapper} className="shop-wrapper">
       <aside style={styles.sidebar} className="shop-sidebar">
         <h2 style={styles.sidebarTitle}>Categories</h2>
-        <div style={styles.categoryList}>
+        <div style={styles.categoryList} className="categoryList">
           {categories.filter(cat => cat !== 'all').map(cat => (
             <div key={cat} style={styles.categoryGroup}>
               <button onClick={() => { setSelectedCategory(cat); setSelectedSubcategory(null); }} style={{...styles.sidebarBtn, ...(selectedCategory === cat ? styles.sidebarBtnActive : {})}}>

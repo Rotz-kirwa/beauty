@@ -67,6 +67,25 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+  .categoryList {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 0.5rem !important;
+    overflow-x: auto !important;
+    padding-bottom: 0.5rem !important;
+  }
+  
+  .categoryGroup {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+  
+  .shop-sidebar button {
+    min-width: max-content !important;
+    padding: 0.6rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+  
   .mobile-hamburger {
     display: block !important;
   }

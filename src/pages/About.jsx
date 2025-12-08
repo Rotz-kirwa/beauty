@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div style={styles.container}>
+    <div style={styles.container} className="about-page">
       <h1 style={styles.title}>About BeautyShop</h1>
       <div style={styles.content}>
         <p style={styles.text}>Welcome to BeautyShop, your premier destination for high-quality beauty products in Kenya. We are passionate about helping you discover and embrace your unique beauty.</p>

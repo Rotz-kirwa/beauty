@@ -60,6 +60,14 @@ a:hover {
     padding-top: 0;
   }
   
+  .about-page {
+    padding-top: 5.5rem !important;
+  }
+  
+  .contact-page {
+    padding-top: 5.5rem !important;
+  }
+  
   img {
     max-width: 100%;
     height: auto;
@@ -113,13 +121,14 @@ a:hover {
     height: 100vh !important;
     background: linear-gradient(135deg, #fff 0%, #f9f3ff 100%) !important;
     flex-direction: column !important;
-    padding: 1.5rem 1.5rem 2rem 1.5rem !important;
+    padding: 1rem 1.5rem 2rem 1.5rem !important;
     box-shadow: -4px 0 20px rgba(217, 70, 239, 0.15) !important;
     transition: right 0.3s ease !important;
-    gap: 1rem !important;
+    gap: 0.5rem !important;
     align-items: stretch !important;
     z-index: 99 !important;
     overflow-y: auto !important;
+    padding-top: 4.5rem !important;
   }
   
   .mobile-nav.open {

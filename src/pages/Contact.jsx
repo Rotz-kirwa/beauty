@@ -10,9 +10,25 @@ export default function Contact() {
   };
 
   return (
-    <div style={styles.container}>
+    <div style={styles.container} className="contact-page">
       <h1 style={styles.title}>Contact Us</h1>
       <div style={styles.grid}>
+        <form onSubmit={handleSubmit} style={styles.form}>
+          <h2 style={styles.subtitle}>Send us a Message</h2>
+          <input type="text" placeholder="Your Name" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} required style={styles.input} />
+          <input type="email" placeholder="Your Email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} required style={styles.input} />
+          <input type="tel" placeholder="Phone Number" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} required style={styles.input} />
+          <select value={formData.productType} onChange={(e) => setFormData({...formData, productType: e.target.value})} required style={styles.input}>
+            <option value="">Select Product Type</option>
+            <option value="skincare">Skincare</option>
+            <option value="makeup">Makeup</option>
+            <option value="haircare">Hair Care</option>
+            <option value="fragrance">Fragrances</option>
+            <option value="bathbody">Bath & Body</option>
+          </select>
+          <textarea placeholder="Your Message" value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} required style={styles.textarea} rows="5"></textarea>
+          <button type="submit" style={styles.submitBtn}>Send Message</button>
+        </form>
         <div style={styles.content}>
           <h2 style={styles.subtitle}>Get in Touch</h2>
           <p style={styles.text}>We'd love to hear from you!</p>
@@ -38,25 +54,6 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <form onSubmit={handleSubmit} style={styles.form}>
-          <h2 style={styles.subtitle}>Send us a Message</h2>
-          <input type="text" placeholder="Your Name" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} required style={styles.input} />
-          <input type="email" placeholder="Your Email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} required style={styles.input} />
-          <input type="tel" placeholder="Phone Number" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} required style={styles.input} />
-          <select value={formData.productType} onChange={(e) => setFormData({...formData, productType: e.target.value})} required style={styles.input}>
-            <option value="">Select Product Type</option>
-            <option value="skincare">Skincare</option>
-            <option value="makeup">Makeup</option>
-            <option value="haircare">Hair Care</option>
-            <option value="fragrance">Fragrances</option>
-            <option value="bathbody">Bath & Body</option>
-          </select>
-          <textarea placeholder="Your Message" value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} required style={styles.textarea} rows="5"></textarea>
-          <button type="submit" style={styles.submitBtn}>Send Message</button>
-        </form>
-      </div>
-    </div>
-  );
 }
 
 const styles = {

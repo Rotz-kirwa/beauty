@@ -113,6 +113,21 @@ a:hover {
     display: block !important;
   }
   
+  .mobile-cart-btn {
+    display: block !important;
+    background: #fff !important;
+    border: 1px solid #eee !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-left: 0.5rem !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+    z-index: 103 !important;
+  }
+  
   .desktopNav {
     display: none !important;
   }

@@ -50,6 +50,16 @@ export default function Header({ onCartClick, onNavigate }) {
           {menuOpen ? '✕' : '☰'}
         </button>
 
+        {/* Mobile Cart Button - visible outside hamburger on mobile for easy access */}
+        <button
+          className="mobile-cart-btn"
+          onClick={handleCartClick}
+          style={styles.mobileCartBtn}
+          title="Cart"
+        >
+          🛒 {cart.length > 0 && <span style={styles.badge}>{cart.length}</span>}
+        </button>
+
         {/* Mobile Menu Overlay */}
         {menuOpen && (
           <div style={styles.mobileMenuOverlay} onClick={() => setMenuOpen(false)} />
@@ -203,6 +213,17 @@ const styles = {
     bottom: 0,
     background: 'rgba(0, 0, 0, 0.3)',
     zIndex: 98
+  },
+  mobileCartBtn: {
+    background: 'none',
+    border: 'none',
+    fontSize: '1.6rem',
+    cursor: 'pointer',
+    padding: '0.3rem',
+    marginLeft: '0.5rem',
+    color: '#333',
+    position: 'relative',
+    zIndex: 103
   },
   mobileNav: { 
     position: 'fixed', 

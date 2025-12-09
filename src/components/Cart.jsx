@@ -172,7 +172,7 @@ const styles = {
   total: { fontSize: '1.25rem', marginBottom: '1rem', display: 'flex', justifyContent: 'space-between' },
   checkoutBtn: { width: '100%', background: '#d946ef', color: '#fff', border: 'none', padding: '1rem', borderRadius: '8px', fontSize: '1rem', cursor: 'pointer', fontWeight: 'bold' }
   ,
-  secondaryBtn: { background: '#fff', border: '1px solid #e5e5e5', padding: '0.9rem 1rem', borderRadius: 8, cursor: 'pointer' },
+  secondaryBtn: { background: '#fff', border: '1px solid #d946ef', color: '#d946ef', padding: '0.9rem 1rem', borderRadius: 8, cursor: 'pointer', fontWeight: 700 },
   checkoutForm: { display: 'flex', flexDirection: 'column', gap: '0.6rem' },
   input: { padding: '0.8rem', border: '1px solid #e5e5e5', borderRadius: 8 }
   ,

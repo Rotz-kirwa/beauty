@@ -28,6 +28,10 @@ button:active {
   transform: scale(0.98);
 }
 
+.mobile-cart-btn {
+  display: none;
+}
+
 a:hover {
   color: #d946ef !important;
 }

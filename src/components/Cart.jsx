@@ -124,13 +124,13 @@ export default function Cart({ isOpen, onClose }) {
                         const lineTotal = priceKsh * (it.quantity || 1);
                         return (
                           <div key={it.id} style={styles.summaryRow}>
-                            <div style={{fontSize: '0.95rem'}}>{it.name} x {it.quantity}</div>
-                            <div style={{fontSize: '0.95rem', color: '#333'}}>KSh {lineTotal.toLocaleString()}</div>
+                            <div style={styles.summaryItemName}>{it.name} x {it.quantity}</div>
+                            <div style={styles.summaryItemAmount}>{currency(lineTotal)}</div>
                           </div>
                         );
                       })}
                     </div>
-                    <div style={{marginTop: 8, fontWeight: 600}}>Total: {currency(total)}</div>
+                    <div style={{marginTop: 8, fontWeight: 700, fontSize: '1.05rem', color: '#d946ef'}}>Total: {currency(total)}</div>
                   </div>
 
                   <form onSubmit={handleCheckout} style={styles.checkoutForm}>
@@ -177,6 +177,8 @@ const styles = {
   input: { padding: '0.8rem', border: '1px solid #e5e5e5', borderRadius: 8 }
   ,
   orderSummary: { background: '#fff', border: '1px solid #f0f0f0', padding: '0.75rem', borderRadius: 8, marginBottom: '0.8rem' },
-  summaryRow: { display: 'flex', justifyContent: 'space-between', padding: '0.25rem 0', borderBottom: '1px dashed #f0f0f0' },
+  summaryRow: { display: 'flex', justifyContent: 'space-between', padding: '0.35rem 0', borderBottom: '1px solid rgba(0,0,0,0.04)' },
+  summaryItemName: { fontSize: '0.95rem', color: '#333', fontWeight: 500 },
+  summaryItemAmount: { fontSize: '0.95rem', color: '#d946ef', fontWeight: 700 },
   label: { fontSize: '0.85rem', color: '#444', marginBottom: 6 }
 };

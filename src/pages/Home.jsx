@@ -13,6 +13,16 @@ export default function Home({ onNavigate }) {
     { name: 'Bath & Body', image: 'https://i.pinimg.com/736x/43/74/11/437411f0f393b9d18fe4225eb6f3e5a3.jpg', desc: 'Pamper yourself with luxurious bath and body products. Moisturizing lotions, refreshing scrubs, and soothing treatments for silky smooth skin.' }
   ];
 
+  const toKey = (name) => {
+    const k = name.toLowerCase();
+    if (k.includes('skincare')) return 'skincare';
+    if (k.includes('makeup')) return 'makeup';
+    if (k.includes('hair')) return 'haircare';
+    if (k.includes('fragrance')) return 'fragrance';
+    if (k.includes('bath')) return 'bathbody';
+    return k.replace(/[^a-z0-9]+/g,'');
+  };
+
   return (
     <>
       <section id="home" style={styles.hero}>
@@ -47,6 +57,12 @@ export default function Home({ onNavigate }) {
                 <div style={styles.categoryContent}>
                   <h3 style={styles.categoryName}>{cat.name}</h3>
                   <p style={styles.categoryDesc}>{cat.desc}</p>
+                  <button
+                    style={styles.categoryBtn}
+                    onClick={() => onNavigate('shop', { category: toKey(cat.name) })}
+                  >
+                    Explore {cat.name}
+                  </button>
 
                 </div>
               </div>

@@ -16,7 +16,11 @@ function App() {
     return saved || 'home';
   });
 
-  const handleNavigate = (page) => {
+  const handleNavigate = (page, data) => {
+    // optionally store data for pages that read it (e.g., shop category)
+    if (page === 'shop' && data && data.category) {
+      try { sessionStorage.setItem('shopCategory', data.category); } catch (e) {}
+    }
     setCurrentPage(page);
     sessionStorage.setItem('currentPage', page);
     window.scrollTo(0, 0);

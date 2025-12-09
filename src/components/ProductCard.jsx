@@ -23,7 +23,7 @@ export default function ProductCard({ product }) {
         {product.description && <p style={styles.description}>{product.description}</p>}
         <div style={styles.rating}>⭐ {product.rating} ({product.reviews})</div>
         <div style={styles.footer}>
-          <span style={styles.price}>KSh {(product.price * 130).toLocaleString()}</span>
+          <span style={styles.price}>{new Intl.NumberFormat('en-KE', { style: 'currency', currency: 'KES', maximumFractionDigits: 0 }).format(product.price * 130)}</span>
           <button 
             onClick={() => addToCart(product)} 
             style={{...styles.addBtn, ...(btnHovered ? {background: '#c026d3'} : {})}}

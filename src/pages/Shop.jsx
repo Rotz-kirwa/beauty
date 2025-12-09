@@ -3,7 +3,16 @@ import ProductCard from '../components/ProductCard';
 import { products, categories, categoryDetails } from '../data/products';
 
 export default function Shop() {
-  const [selectedCategory, setSelectedCategory] = useState('skincare');
+  const [selectedCategory, setSelectedCategory] = useState(() => {
+    try {
+      const c = sessionStorage.getItem('shopCategory');
+      if (c) {
+        sessionStorage.removeItem('shopCategory');
+        return c;
+      }
+    } catch (e) {}
+    return 'skincare';
+  });
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
   const filtered = products.filter(p => p.category === selectedCategory);
 

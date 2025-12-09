@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { SITE_PHONE } from '../config/site';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', productType: '', message: '' });
@@ -36,7 +37,7 @@ export default function Contact() {
             <span style={styles.icon}>📞</span>
             <div>
               <strong>Phone:</strong>
-              <p style={styles.detail}>+254 762 677 591</p>
+              <p style={styles.detail}>{SITE_PHONE}</p>
             </div>
           </div>
           <div style={styles.contactItem}>
